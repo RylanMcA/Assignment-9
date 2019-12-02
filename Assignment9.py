@@ -1,7 +1,7 @@
 import sys
 import operator
-# Used a LOT documentation from w3schools.com/python
 
+# Used a LOT documentation from w3schools.com/python
 
 #argv[0] is the name of this python file
 cmdStoryFile = sys.argv[1]
@@ -17,19 +17,16 @@ with open(cmdStoryFile, 'r') as storyFile:
 with open(cmdSkipFile, 'r') as skipFile:
     skipContent = skipFile.read()
 
-
 #Remove uppercase letters and 
 #split the skip-words since thats all do to it
 storyContent = storyContent.lower()
 skipContent = skipContent.lower()
 skipArray = skipContent.split(",",-1)
 
-
 #Printing words skipped
 print("Words skipped: [", end="")
 print(*skipArray, sep=",", end="")
 print("]")
-
 
 #replacment loop for easures
 erasures = ['\n','\t','.','?','!',',',';',':','\'','\"']
@@ -39,7 +36,6 @@ for x in erasures:
     else:
         storyContent = storyContent.replace(x," ")
 
-
 #split the story string into the array
 #remove the needed words
 storyArray = storyContent.split()
@@ -47,7 +43,6 @@ storyArray.pop() #Theres some weird end of file stuff in emperor3.txt
 for x in skipArray: #Get a value from skip 
     while(storyArray.count(x) > 0 ):
         storyArray.remove(x)
-
 
 #Create dictonary. It's like a Hash Table!
 #Create pairs of words. 
@@ -61,7 +56,6 @@ while(i < (len(storyArray)-1)):
     else:
         storyConsecutiveDictonary[ storyArray[i]+" "+storyArray[i+1] ] = 1
     i += 1
-
 
 #This is now sorted from SMALLEST to LARGEST
 #Since we're small to large, we need to
