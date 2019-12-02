@@ -28,7 +28,7 @@ print("Words skipped: [", end="")
 print(*skipArray, sep=",", end="")
 print("]")
 
-#replacment loop for easures
+#replacement loop for erasures
 erasures = ['\n','\t','.','?','!',',',';',':','\'','\"']
 for x in erasures:
     if( x == "'"):
