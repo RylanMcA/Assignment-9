@@ -44,8 +44,6 @@ for x in skipArray:  # Get a value from skip
     while(storyArray.count(x) > 0):
         storyArray.remove(x)
 
-print(storyArray)
-
 # Create dictionary. It's like a Hash Table!
 # Create pairs of words.
 # So each word has a pair with the word to the left and one to the right.
